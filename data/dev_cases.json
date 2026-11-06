@@ -1,0 +1,212 @@
+[
+  {
+    "id": "D01",
+    "scenario": "job",
+    "title": "培训费入职",
+    "jurisdiction": "HK",
+    "synthetic": true,
+    "label_origin": "作者设计的核查状态，非警方裁定，待人工复核",
+    "input": "招聘方：线上客服每天三百，先交五百培训费才能排班，今晚不交名额就没了。",
+    "expected_status": "risk_signals",
+    "expected_evidence": [
+      "先交五百培训费才能排班",
+      "今晚不交名额就没了"
+    ],
+    "relevant_source_ids": [
+      "S02"
+    ],
+    "clarifying_question": "是否通过独立找到的公司渠道核实岗位和经办人？",
+    "must_not": "不把高报酬单独当作定罪依据。"
+  },
+  {
+    "id": "D02",
+    "scenario": "job",
+    "title": "任务充值",
+    "jurisdiction": "HK",
+    "synthetic": true,
+    "label_origin": "作者设计的核查状态，非警方裁定，待人工复核",
+    "input": "招聘方：前两单的佣金已到账，现在充值两千就能解锁高佣任务，充值后才允许提现。",
+    "expected_status": "risk_signals",
+    "expected_evidence": [
+      "充值两千就能解锁高佣任务",
+      "充值后才允许提现"
+    ],
+    "relevant_source_ids": [
+      "S02"
+    ],
+    "clarifying_question": "所谓工作是否要求你持续垫付自己的钱？",
+    "must_not": "不把前两单到账视为安全证据。"
+  },
+  {
+    "id": "D03",
+    "scenario": "job",
+    "title": "缺少主体",
+    "jurisdiction": "HK",
+    "synthetic": true,
+    "label_origin": "作者设计的核查状态，非警方裁定，待人工复核",
+    "input": "招聘方：我们招周末兼职，工资日结，有兴趣加我了解。",
+    "expected_status": "insufficient_information",
+    "expected_evidence": [],
+    "relevant_source_ids": [
+      "S02"
+    ],
+    "clarifying_question": "具体岗位、公司名称以及是否需要先支付费用是什么？",
+    "must_not": "不能仅因日结或网络沟通判定高风险。"
+  },
+  {
+    "id": "D04",
+    "scenario": "job",
+    "title": "无预付背景",
+    "jurisdiction": "HK",
+    "synthetic": true,
+    "label_origin": "作者设计的核查状态，非警方裁定，待人工复核",
+    "input": "用户：我自己找到公司官网电话，确认了招聘人员和岗位，收到工作合同，不交任何费用。招聘方：工资在月底发放。",
+    "expected_status": "no_obvious_signals",
+    "expected_evidence": [],
+    "relevant_source_ids": [
+      "S02"
+    ],
+    "clarifying_question": "是否还有未说明的付费或账户操作要求？",
+    "must_not": "只能说基于现有信息暂未发现明显信号，不能担保安全；核实信息是用户陈述。"
+  },
+  {
+    "id": "D05",
+    "scenario": "job",
+    "title": "否定词",
+    "jurisdiction": "HK",
+    "synthetic": true,
+    "label_origin": "作者设计的核查状态，非警方裁定，待人工复核",
+    "input": "招聘方：培训由公司承担，不用支付培训费或押金。用户：我通过自己找到的公司电话核实了岗位和招聘人员，合同写明工作地点和工资。",
+    "expected_status": "no_obvious_signals",
+    "expected_evidence": [],
+    "relevant_source_ids": [
+      "S02"
+    ],
+    "clarifying_question": "是否另有与合同不一致的付款要求？",
+    "must_not": "不能把不交培训费误读为要交费。"
+  },
+  {
+    "id": "D06",
+    "scenario": "job",
+    "title": "非雇佣培训",
+    "jurisdiction": "HK",
+    "synthetic": true,
+    "label_origin": "作者设计的核查状态，非警方裁定，待人工复核",
+    "input": "用户：这是我主动报名的摄影课程，课程收费，没有承诺录用，也不是招聘。我想知道收款方是否可靠。",
+    "expected_status": "insufficient_information",
+    "expected_evidence": [],
+    "relevant_source_ids": [
+      "S02"
+    ],
+    "clarifying_question": "这是购买课程还是以缴费换工作机会？",
+    "must_not": "说明超出兼职招募核心范围，不把所有收费课程定为求职骗局。"
+  },
+  {
+    "id": "D07",
+    "scenario": "rental",
+    "title": "付钱寄钥匙",
+    "jurisdiction": "HK",
+    "synthetic": true,
+    "label_origin": "作者设计的核查状态，非警方裁定，待人工复核",
+    "input": "出租方：我在海外，不能看房，你先转一个月租金，收到钱就寄钥匙和租约。",
+    "expected_status": "risk_signals",
+    "expected_evidence": [
+      "不能看房",
+      "先转一个月租金",
+      "收到钱就寄钥匙和租约"
+    ],
+    "relevant_source_ids": [
+      "S03"
+    ],
+    "clarifying_question": "是否有人能安排实地看房和独立核实出租方？",
+    "must_not": "海外所在地本身不是充分证据。"
+  },
+  {
+    "id": "D08",
+    "scenario": "rental",
+    "title": "牌照截图催付",
+    "jurisdiction": "HK",
+    "synthetic": true,
+    "label_origin": "作者设计的核查状态，非警方裁定，待人工复核",
+    "input": "代理：牌照照片发给你了，不要打去公司，我私人收订金就行，十分钟内转账才留房。",
+    "expected_status": "risk_signals",
+    "expected_evidence": [
+      "不要打去公司",
+      "我私人收订金就行",
+      "十分钟内转账才留房"
+    ],
+    "relevant_source_ids": [
+      "S04"
+    ],
+    "clarifying_question": "是否通过独立找到的门店渠道核实经办人及收款安排？",
+    "must_not": "不因牌照照片真实就认定聊天者真实。"
+  },
+  {
+    "id": "D09",
+    "scenario": "rental",
+    "title": "单独押金",
+    "jurisdiction": "HK",
+    "synthetic": true,
+    "label_origin": "作者设计的核查状态，非警方裁定，待人工复核",
+    "input": "出租方：签约时需要支付押金。用户：我还没有补充其他情况。",
+    "expected_status": "insufficient_information",
+    "expected_evidence": [],
+    "relevant_source_ids": [
+      "S03",
+      "S04"
+    ],
+    "clarifying_question": "是否已看房、核实出租方和确认租约及收款安排？",
+    "must_not": "押金不是单独风险证据。"
+  },
+  {
+    "id": "D10",
+    "scenario": "rental",
+    "title": "完整核实背景",
+    "jurisdiction": "HK",
+    "synthetic": true,
+    "label_origin": "作者设计的核查状态，非警方裁定，待人工复核",
+    "input": "用户：我已实地看房，独立联系代理公司确认经办人，公司协助核对出租方及租约，收款安排与书面约定一致，签约时付款。",
+    "expected_status": "no_obvious_signals",
+    "expected_evidence": [],
+    "relevant_source_ids": [
+      "S03",
+      "S04"
+    ],
+    "clarifying_question": "实际付款前收款安排是否发生变更？",
+    "must_not": "保留条件性表述，不声称系统已核验身份。"
+  },
+  {
+    "id": "D11",
+    "scenario": "rental",
+    "title": "否定先付后看",
+    "jurisdiction": "HK",
+    "synthetic": true,
+    "label_origin": "作者设计的核查状态，非警方裁定，待人工复核",
+    "input": "出租方：不用先交钱，周六先看房核对资料，再商议租约。用户：我已独立联系代理门店确认了经办人。",
+    "expected_status": "no_obvious_signals",
+    "expected_evidence": [],
+    "relevant_source_ids": [
+      "S03",
+      "S04"
+    ],
+    "clarifying_question": "后续是否出现先转账再看房等变更？",
+    "must_not": "不得把不用先交钱识别成先付款。"
+  },
+  {
+    "id": "D12",
+    "scenario": "rental",
+    "title": "二房东授权",
+    "jurisdiction": "HK",
+    "synthetic": true,
+    "label_origin": "作者设计的核查状态，非警方裁定，待人工复核",
+    "input": "出租方：我是二房东，业主不在港，可以给你看授权文件，你想周末看房吗？用户：我还没有查验文件。",
+    "expected_status": "insufficient_information",
+    "expected_evidence": [],
+    "relevant_source_ids": [
+      "S03",
+      "S04"
+    ],
+    "clarifying_question": "能否独立核实实际出租权限及看房安排？",
+    "must_not": "不能因为不是业主本人就认定诈骗；来源不能被用于臆造法律结论。"
+  }
+]

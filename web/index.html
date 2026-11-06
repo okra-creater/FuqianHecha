@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="zh-Hans" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="付前核查：面向大学生兼职和租房场景的转账风险核查助手。"
+    />
+    <title>付前核查 · 转账前多核查一步</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="/" aria-label="付前核查首页">
+          <span class="brand-mark" aria-hidden="true">
+            <span></span>
+          </span>
+          <span>
+            <strong>付前核查</strong>
+            <small>FuqianHecha</small>
+          </span>
+        </a>
+        <span class="stage-badge">本地原型 · v0.4</span>
+      </header>
+
+      <main>
+        <section class="hero" aria-labelledby="page-title">
+          <p class="eyebrow">PRE-PAYMENT CHECK</p>
+          <h1 id="page-title">转账前，<span>多核查一步</span></h1>
+          <p class="hero-copy">
+            面向大学生兼职与租房场景，从对话中整理风险信号、原文证据和可执行的核查建议。
+          </p>
+          <div class="scope-row" aria-label="当前支持范围">
+            <span>兼职招聘</span>
+            <span>租房付款</span>
+            <span>香港资料库</span>
+          </div>
+        </section>
+
+        <section class="workspace" aria-label="核查工作区">
+          <div class="workspace-heading">
+            <div>
+              <p class="section-label">CHECK WORKSPACE</p>
+              <h2>核查工作区</h2>
+            </div>
+            <span class="ready-state" id="frame-status">
+              <span aria-hidden="true"></span>
+              正在载入界面
+            </span>
+          </div>
+
+          <div class="input-layout">
+            <form class="input-panel" id="analysis-form" novalidate>
+              <div class="form-intro">
+                <span class="step-number">01 · INPUT</span>
+                <h3>提交待核查对话</h3>
+                <p>请删除姓名、电话、账号等个人资料，只保留与付款要求有关的内容。</p>
+              </div>
+
+              <fieldset class="field-group">
+                <legend>对话场景</legend>
+                <div class="segmented-control">
+                  <label>
+                    <input type="radio" name="scenario" value="auto" checked />
+                    <span>自动判断</span>
+                  </label>
+                  <label>
+                    <input type="radio" name="scenario" value="job" />
+                    <span>兼职招聘</span>
+                  </label>
+                  <label>
+                    <input type="radio" name="scenario" value="rental" />
+                    <span>租房付款</span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <div class="field-group jurisdiction-field">
+                <div>
+                  <span class="field-label">资料地区</span>
+                  <p>首版规则与资料库仅覆盖香港。</p>
+                </div>
+                <div class="jurisdiction-lock" aria-label="当前资料地区为香港">
+                  <span class="region-code">HK</span>
+                  <span>香港</span>
+                  <span class="lock-mark" aria-hidden="true"></span>
+                </div>
+                <input type="hidden" name="jurisdiction" value="HK" />
+              </div>
+
+              <div class="field-group conversation-field">
+                <div class="field-heading">
+                  <label for="conversation">对话内容</label>
+                  <output id="character-count" for="conversation">0 / 20,000</output>
+                </div>
+                <textarea
+                  id="conversation"
+                  name="text"
+                  rows="9"
+                  maxlength="20000"
+                  placeholder="例如：招聘方说需要先交培训费才能安排工作……"
+                  aria-describedby="conversation-help form-message"
+                  autocomplete="off"
+                  spellcheck="true"
+                  required
+                ></textarea>
+                <div class="textarea-footer">
+                  <p id="conversation-help">请粘贴原文，不要自行改写，以便保留准确证据。</p>
+                  <div class="example-actions" aria-label="填入示例">
+                    <span>试用示例</span>
+                    <button type="button" data-example="job" data-scenario="job">兼职</button>
+                    <button type="button" data-example="rental" data-scenario="rental">租房</button>
+                  </div>
+                </div>
+              </div>
+
+              <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+
+              <button class="primary-action" id="analyze-button" type="submit" disabled>
+                <span>开始核查</span>
+                <span aria-hidden="true">→</span>
+              </button>
+            </form>
+
+            <aside class="input-sidebar" aria-label="填写说明与后续模块">
+              <section class="guide-card">
+                <p class="section-label">BEFORE YOU SUBMIT</p>
+                <h3>保留这些关键信息</h3>
+                <ol>
+                  <li><span>01</span>对方要求你何时付款</li>
+                  <li><span>02</span>付款与工作或看房的条件</li>
+                  <li><span>03</span>催促、阻止核实等原话</li>
+                </ol>
+              </section>
+
+              <section class="queued-card">
+                <div>
+                  <span class="queue-number">02</span>
+                  <p><strong>透明分析</strong><small>分析接口已就绪</small></p>
+                </div>
+                <div>
+                  <span class="queue-number">03</span>
+                  <p><strong>核查结果</strong><small>结果组件已就绪</small></p>
+                </div>
+              </section>
+            </aside>
+          </div>
+
+          <section
+            class="result-panel"
+            id="analysis-result"
+            aria-labelledby="result-title"
+            aria-live="polite"
+            tabindex="-1"
+            hidden
+          >
+            <div class="result-header">
+              <div>
+                <span class="step-number">03 · RESULT</span>
+                <p class="result-kicker" id="result-kicker">核查完成</p>
+                <h3 id="result-title">核查结果</h3>
+                <p id="result-intro"></p>
+              </div>
+              <div class="result-meta" aria-label="本次分析信息">
+                <span id="result-scenario"></span>
+                <span id="result-jurisdiction"></span>
+                <span id="result-version"></span>
+              </div>
+            </div>
+
+            <section class="result-block" id="signals-section">
+              <div class="result-block-heading">
+                <span>01</span>
+                <h4>风险信号与原文证据</h4>
+              </div>
+              <div class="signal-list" id="signal-list"></div>
+            </section>
+
+            <div class="result-columns">
+              <section class="result-block">
+                <div class="result-block-heading">
+                  <span>02</span>
+                  <h4>仍需确认</h4>
+                </div>
+                <ul class="plain-list" id="unknown-list"></ul>
+                <div class="question-box">
+                  <strong>建议追问</strong>
+                  <ul class="plain-list" id="question-list"></ul>
+                </div>
+              </section>
+
+              <section class="result-block checklist-block">
+                <div class="result-block-heading">
+                  <span>03</span>
+                  <h4>转账前核查清单</h4>
+                </div>
+                <ul class="check-list" id="checklist"></ul>
+              </section>
+            </div>
+
+            <section class="result-block sources-block" id="sources-section" hidden>
+              <div class="result-block-heading">
+                <span>04</span>
+                <h4>本次使用的官方资料</h4>
+              </div>
+              <p class="sources-intro">
+                资料用于支持核查信号和建议，不代表发布机构判断了当前个案。
+              </p>
+              <div class="source-list" id="source-list"></div>
+            </section>
+
+            <section class="limitations" aria-labelledby="limitations-title">
+              <h4 id="limitations-title">结果边界</h4>
+              <ul id="limitation-list"></ul>
+            </section>
+          </section>
+        </section>
+
+        <section class="principles" aria-label="产品原则">
+          <p>不替你做交易决定</p>
+          <span aria-hidden="true"></span>
+          <p>不要求账户密码或验证码</p>
+          <span aria-hidden="true"></span>
+          <p>不把“未发现”说成“绝对安全”</p>
+        </section>
+      </main>
+
+      <footer>
+        <p>当前为学生项目原型，仅供风险核查演示，不构成诈骗认定、法律意见或安全保证。</p>
+      </footer>
+    </div>
+  </body>
+</html>

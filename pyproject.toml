@@ -1,0 +1,10 @@
+[project]
+name = "fuqianhecha"
+version = "0.1.0"
+description = "Pre-payment risk checking assistant for student job and rental scenarios"
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.unittest]
+start-directory = "tests"
+

@@ -1,0 +1,90 @@
+[
+  {
+    "id": "S01",
+    "title": "「刷單賺佣」求職騙局",
+    "publisher": "香港警务处反诈骗协调中心",
+    "url": "https://www.adcc.gov.hk/zh-hk/alerts-detail/alerts-1509000900093759490.html",
+    "published_at": "2022-03-30",
+    "checked_at": "2026-10-11",
+    "jurisdiction": "HK",
+    "topics": [
+      "job",
+      "prepayment",
+      "task_scam"
+    ],
+    "verification": "搜索工具返回正文；随后直接打开超时。入库前应再核对原页。",
+    "status": "provisional",
+    "summary": "以刷单工作吸引求职者，先返还小额本金和佣金，再诱导增加垫款；招聘方可能要求转入个人账户。",
+    "checks": [
+      "询问是否需要先垫款才能赚取佣金。",
+      "早期收到小额返款不应作为之后交易可靠的证明。"
+    ],
+    "limits": "历史手法说明，不是对当前个案的认定；暂不加入正式检索索引。"
+  },
+  {
+    "id": "S02",
+    "title": "香港求職騙案激增！5大最常見求職騙案類型 一文看清！",
+    "publisher": "香港警务处",
+    "url": "https://www.police.gov.hk/offbeat120/scam/49_common-job-scams.html",
+    "published_at": "2025-08-25",
+    "checked_at": "2026-10-11",
+    "jurisdiction": "HK",
+    "topics": [
+      "job",
+      "prepayment",
+      "impersonation"
+    ],
+    "verification": "已读取网页正文",
+    "status": "reviewed",
+    "summary": "招聘诈骗可能利用预付费用、充值任务或假冒企业招募。警方建议核对公司及招聘人员，审慎保护身份和账户资料。",
+    "checks": [
+      "通过独立查找的公司联系方式核实岗位和招聘人员。",
+      "对以获得职位为条件的押金、培训费或充值要求保持警惕。"
+    ],
+    "limits": "真实公司存在，不代表聊天者确为该公司人员。不要因使用即时通讯或提到工资账户就直接判断诈骗。"
+  },
+  {
+    "id": "S03",
+    "title": "租屋騙案",
+    "publisher": "香港警务处反诈骗协调中心",
+    "url": "https://www.adcc.gov.hk/zh-hk/alerts-detail/alerts-1444920527301967873.html",
+    "published_at": "2018-02-22",
+    "checked_at": "2026-10-11",
+    "jurisdiction": "HK",
+    "topics": [
+      "rental",
+      "prepayment",
+      "fake_site"
+    ],
+    "verification": "已读取网页正文",
+    "status": "reviewed",
+    "summary": "警示描述假业主借口在海外，要求先付租金才寄钥匙或租约，并引导租客到假网站付款。",
+    "checks": [
+      "核查能否实地看房、确认出租方并办理租约。",
+      "付款页面应通过独立找到的正式渠道核实。"
+    ],
+    "limits": "历史手法仍可作为核查线索；不能把海外业主或单一押金词汇视为诈骗的充分证据。"
+  },
+  {
+    "id": "S04",
+    "title": "慎防假冒持牌地产代理",
+    "publisher": "香港地产代理监管局",
+    "url": "https://smart.eaa.org.hk/zh-CN/column/hkej/309",
+    "published_at": "2026-09-24",
+    "checked_at": "2026-10-11",
+    "jurisdiction": "HK",
+    "topics": [
+      "rental",
+      "impersonation",
+      "agent_identity"
+    ],
+    "verification": "已读取网页正文",
+    "status": "reviewed",
+    "summary": "有人盗用真实代理的姓名、照片与牌照资料推销假房源，催促先付订金。监管局建议核实牌照，并通过会面或所属公司查验实际人员身份。",
+    "checks": [
+      "有效牌照只能证明持牌人存在，不能证明聊天账号由本人使用。",
+      "通过独立找到的所属公司渠道核实经办人和收款安排。"
+    ],
+    "limits": "收款账户类型需要结合身份、授权和合同判断；不把所有个人收款账户一律判为诈骗。"
+  }
+]

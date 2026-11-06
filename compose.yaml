@@ -1,0 +1,14 @@
+services:
+  app:
+    build:
+      context: .
+    image: fuqianhecha:local
+    init: true
+    restart: unless-stopped
+    ports:
+      - "${APP_PORT:-8000}:8000"
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
